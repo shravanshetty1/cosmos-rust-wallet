@@ -26,7 +26,7 @@ tonic = { version = "0.4.1", features = ["transport"] }
 
 [target.'cfg(all(target_arch = "wasm32", target_os = "unknown"))'.dependencies]
 tonic = { version = "0.4.1", default-features = false }
-grpc-web-client = { git = "https://github.com/titanous/grpc-web-client", branch = "main"}
+grpc-web-client = "0.1.2"
 
 [dev-dependencies]
 wasm-bindgen-test = "0.3.20"
