@@ -12,9 +12,9 @@ keywords = ["blockchain", "cosmos", "cosmos-rust-wallet"]
 crate-type = ["cdylib", "lib"]
 
 [dependencies]
-cosmos-sdk-proto = { version = "0.5.0"}
-prost = { version = "0.7.0"}
-prost-types = { version = "0.7" }
+cosmos-sdk-proto = { version = "0.8.0"}
+prost = { version = "0.9"}
+prost-types = { version = "0.9" }
 reqwest = { version = "=0.10.10", features = ["json"] }
 serde = { version = "1.0", features = ["derive"] }
 serde_json = { version = "1.0.62" }
@@ -22,11 +22,11 @@ crw-wallet = { path = "../../packages/crw-wallet", version = "0.1.0" }
 thiserror = "1.0.24"
 
 [target.'cfg(not(all(target_arch = "wasm32", target_os = "unknown")))'.dependencies]
-tonic = { version = "0.4.1", features = ["transport"] }
+tonic = { version = "0.6", features = ["transport"] }
 
 [target.'cfg(all(target_arch = "wasm32", target_os = "unknown"))'.dependencies]
-tonic = { version = "0.4.1", default-features = false }
-grpc-web-client = "0.1.2"
+tonic = { version = "0.6", default-features = false }
+grpc-web-client = { git = "https://github.com/titanous/grpc-web-client" }
 
 [dev-dependencies]
 wasm-bindgen-test = "0.3.20"
